@@ -1,0 +1,58 @@
+# Submission Metadata — Redrob Hackathon
+# Mirror of portal metadata fields (per submission_spec Section 10.2)
+
+team_name: "INDIARUNS"
+
+primary_contact:
+  name: "Ashish Pal"
+  email: "ashishpal79912@gmail.com"
+  phone: "FILL_IN_PHONE"
+
+github_repository: "https://github.com/FILL_IN_USERNAME/redrob-ranker-ai"
+
+sandbox_link: "FILL_IN_STREAMLIT_OR_HUGGINGFACE_LINK"
+
+ai_tools_declared:
+  - Claude
+
+compute_environment: "Windows 11, Intel/AMD CPU, 16GB RAM, Python 3.13"
+
+team_members:
+  - name: "Ashish Pal"
+    email: "ashishpal79912@gmail.com"
+
+methodology_summary: |
+  Two-phase CPU-only ranking system for 100K candidates.
+
+  OFFLINE (no time limit):
+    scripts/precompute.py streams candidates.jsonl, computes TF-IDF semantic
+    scores (TextFeaturePipeline with keyword boost), extracts 27 structured
+    features per candidate, runs composite scoring for all 10 sub-scores
+    (precomputing everything), and optionally generates sentence-transformer
+    embeddings (all-MiniLM-L6-v2). Artifacts saved to data/artifacts/ and
+    data/processed/. Total: ~15 min on CPU.
+
+  ONLINE (≤5 min — actually <1 second):
+    run.py loads precomputed sub_scores.parquet, sorts by composite score,
+    selects top 100, generates fact-grounded reasoning strings for each
+    candidate using rank-band tone calibration, and writes submission.csv.
+
+  SCORING (10 sub-scores, sum to 1.0):
+    jd_semantic (0.15) — TF-IDF cosine similarity with keyword boost
+    must_have_skills (0.12) — 4 mandatory JD skill groups
+    retrieval_ranking (0.08) — vector search + LTR depth
+    production_ml (0.15) — ML deployed to production evidence
+    product_shipper (0.10) — startup / product company culture fit
+    behavioral (0.20) — platform engagement + availability + trust
+    location (0.09) — India + preferred city
+    salary (0.03) — salary range alignment
+    experience (0.05) — Gaussian YoE fit (μ=7, σ=2.5)
+    education (0.03) — institutional tier + field relevance
+
+  All sub-scores are multiplied by a compound trap penalty [0.05, 1.0]
+  from 10 detectors (keyword stuffing, fake AI profiles, timeline anomalies,
+  etc.). Optimised for NDCG@10 (0.50 weight) — weights front-load signals
+  that discriminate who can actually build vector search systems.
+
+submission_version: "1"
+submission_date: "2026-06-15"

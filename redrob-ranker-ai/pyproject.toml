@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=72", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "redrob-ranker-ai"
+version = "0.1.0"
+description = "Intelligent Candidate Discovery & Ranking — Redrob Hackathon"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+dependencies = [
+    "sentence-transformers>=2.7.0",
+    "torch>=2.3.1",
+    "transformers>=4.41.2",
+    "numpy>=1.26.4",
+    "pandas>=2.2.2",
+    "pyarrow>=16.1.0",
+    "scikit-learn>=1.5.0",
+    "ijson>=3.3.0",
+    "jsonschema>=4.22.0",
+    "pydantic>=2.7.4",
+    "streamlit>=1.36.0",
+    "plotly>=5.22.0",
+    "tqdm>=4.66.4",
+    "loguru>=0.7.2",
+    "typer>=0.12.3",
+    "rich>=13.7.1",
+    "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.2",
+    "pytest-cov>=5.0.0",
+    "ruff>=0.4.0",
+    "black>=24.0.0",
+]
+
+[project.scripts]
+redrob-rank = "run:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "app*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "W", "I"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
