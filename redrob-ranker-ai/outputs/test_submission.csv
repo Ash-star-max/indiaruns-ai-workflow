@@ -1,0 +1,11 @@
+candidate_id,rank,score,reasoning
+CAND_0000001,1,0.552694,Strong must-have skill coverage (LoRA and Milvus) and 6 years of applied ML experience make this Backend Engineer a solid candidate for the role. Predominantly product-company background (100%) aligns with the JD's emphasis on shipping over architecture.
+CAND_0000010,2,0.524836,"A Data Engineer with 4 years of relevant ML experience (Kubeflow, Elasticsearch, and MLOps) and broad coverage of the JD's stated requirements. Product-company career (100% of roles) suggests comfort with the fast-moving startup environment described in the JD."
+CAND_0000005,3,0.328043,"A Accountant with 11 years of experience in applied ML (SQL, PowerPoint, and Photoshop), showing reasonable alignment with the JD. Gurgaon, Haryana-based with a 30-day availability window."
+CAND_0000004,4,0.319033,"3 years of ML experience (Node.js, Content Writing, and Redux); profile shows moderate fit with the JD's core requirements."
+CAND_0000002,5,0.286336,"12 years Operations Manager (Project Management, React, and Photoshop)—profile covers a relevant portion of the role's technical requirements."
+CAND_0000006,6,0.278447,"A Business Analyst with 6 years of experience in applied ML (Content Writing, SEO, and Redux), showing reasonable alignment with the JD. Note for review: inactive for 107 days with open-to-work off; confirm current interest."
+CAND_0000007,7,0.230443,"A Civil Engineer with 5 years of experience in applied ML (Content Writing, MongoDB, and Sales), showing reasonable alignment with the JD. Note for review: candidate has been inactive recently; confirm current availability."
+CAND_0000008,8,0.216214,"A Operations Manager with 3 years of experience in applied ML (Java, BigQuery, and Spark), showing reasonable alignment with the JD. Note for review: inactive for 184 days with open-to-work off; confirm current interest."
+CAND_0000003,9,0.142897,"Candidate brings 1 year as a Customer Support (Angular, SEO, and Excel) with skills relevant to the Senior AI Engineer role."
+CAND_0000009,10,0.04087,"Candidate brings 11 years as a Mechanical Engineer (Snowflake, gRPC, and JavaScript) with skills relevant to the Senior AI Engineer role. Recruiter note: zero-duration expert claims detected; credential check recommended."
